@@ -33,6 +33,11 @@
 		BC68D17922F023300006AB2B /* GuideImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC68D17422F023300006AB2B /* GuideImage.bundle */; };
 		BC68D17A22F023300006AB2B /* DHGifImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68D17522F023300006AB2B /* DHGifImageOperation.m */; };
 		BC68D17B22F023300006AB2B /* DHGuidePageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68D17822F023300006AB2B /* DHGuidePageHUD.m */; };
+		BCD6D5CF22F1759000E4907E /* WebBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD6D5CE22F1759000E4907E /* WebBaseViewController.m */; };
+		BCD6D5D222F1760600E4907E /* WebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD6D5D122F1760600E4907E /* WebViewManager.m */; };
+		BCD6D5D522F17DB100E4907E /* share_nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD6D5D322F17DB100E4907E /* share_nav@2x.png */; };
+		BCD6D5D622F17DB100E4907E /* share_nav@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD6D5D422F17DB100E4907E /* share_nav@3x.png */; };
+		BCD6D5D922F182E500E4907E /* ToolsAlertSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD6D5D822F182E500E4907E /* ToolsAlertSheet.m */; };
 		BCF301CA22DC1AF700BA8E94 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF301C922DC1AF700BA8E94 /* AppDelegate.m */; };
 		BCF301D222DC1AFB00BA8E94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF301D122DC1AFB00BA8E94 /* Assets.xcassets */; };
 		BCF301D822DC1AFB00BA8E94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF301D722DC1AFB00BA8E94 /* main.m */; };
@@ -172,6 +177,14 @@
 		BC68D17622F023300006AB2B /* DHGuidePageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHGuidePageHUD.h; sourceTree = "<group>"; };
 		BC68D17722F023300006AB2B /* DHGifImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHGifImageOperation.h; sourceTree = "<group>"; };
 		BC68D17822F023300006AB2B /* DHGuidePageHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHGuidePageHUD.m; sourceTree = "<group>"; };
+		BCD6D5CD22F1759000E4907E /* WebBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebBaseViewController.h; sourceTree = "<group>"; };
+		BCD6D5CE22F1759000E4907E /* WebBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebBaseViewController.m; sourceTree = "<group>"; };
+		BCD6D5D022F1760600E4907E /* WebViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewManager.h; sourceTree = "<group>"; };
+		BCD6D5D122F1760600E4907E /* WebViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewManager.m; sourceTree = "<group>"; };
+		BCD6D5D322F17DB100E4907E /* share_nav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_nav@2x.png"; sourceTree = "<group>"; };
+		BCD6D5D422F17DB100E4907E /* share_nav@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_nav@3x.png"; sourceTree = "<group>"; };
+		BCD6D5D722F182E500E4907E /* ToolsAlertSheet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolsAlertSheet.h; sourceTree = "<group>"; };
+		BCD6D5D822F182E500E4907E /* ToolsAlertSheet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolsAlertSheet.m; sourceTree = "<group>"; };
 		BCF301C522DC1AF700BA8E94 /* RFProjectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RFProjectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF301C822DC1AF700BA8E94 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BCF301C922DC1AF700BA8E94 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -500,6 +513,19 @@
 				BC68D17422F023300006AB2B /* GuideImage.bundle */,
 			);
 			path = DHGuidePageHUD;
+			sourceTree = "<group>";
+		};
+		BCD6D5CC22F1757200E4907E /* WebVC */ = {
+			isa = PBXGroup;
+			children = (
+				BCD6D5D322F17DB100E4907E /* share_nav@2x.png */,
+				BCD6D5D422F17DB100E4907E /* share_nav@3x.png */,
+				BCD6D5CD22F1759000E4907E /* WebBaseViewController.h */,
+				BCD6D5CE22F1759000E4907E /* WebBaseViewController.m */,
+				BCD6D5D022F1760600E4907E /* WebViewManager.h */,
+				BCD6D5D122F1760600E4907E /* WebViewManager.m */,
+			);
+			path = WebVC;
 			sourceTree = "<group>";
 		};
 		BCF301BC22DC1AF700BA8E94 = {
@@ -897,6 +923,7 @@
 		BCF302B122DC259600BA8E94 /* Base(基类) */ = {
 			isa = PBXGroup;
 			children = (
+				BCD6D5CC22F1757200E4907E /* WebVC */,
 				BCF302D622DC2DC000BA8E94 /* BaseOther */,
 				BCF302D522DC2DB000BA8E94 /* BaseView */,
 				BCF302D422DC2D9200BA8E94 /* BaseController */,
@@ -1024,6 +1051,8 @@
 		BCF302DB22DC2FE700BA8E94 /* AlertViewManager(弹框) */ = {
 			isa = PBXGroup;
 			children = (
+				BCD6D5D722F182E500E4907E /* ToolsAlertSheet.h */,
+				BCD6D5D822F182E500E4907E /* ToolsAlertSheet.m */,
 			);
 			path = "AlertViewManager(弹框)";
 			sourceTree = "<group>";
@@ -1179,6 +1208,8 @@
 				BCF302F922DC48D000BA8E94 /* SVProgressHUD.bundle in Resources */,
 				BC68D13722EFEB690006AB2B /* blankpage_image_Sleep@2x.png in Resources */,
 				BC68D13222EFE9760006AB2B /* blankpage_button_reload@2x.png in Resources */,
+				BCD6D5D522F17DB100E4907E /* share_nav@2x.png in Resources */,
+				BCD6D5D622F17DB100E4907E /* share_nav@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1233,6 +1264,7 @@
 				BCF301F622DC1E2400BA8E94 /* CYLTabBar.m in Sources */,
 				BCF301F722DC1E2400BA8E94 /* CYLPlusButton.m in Sources */,
 				BCF3027E22DC209C00BA8E94 /* UIButton+instance.m in Sources */,
+				BCD6D5D922F182E500E4907E /* ToolsAlertSheet.m in Sources */,
 				BCF302E522DC489000BA8E94 /* UICKeyChainStore.m in Sources */,
 				BCF3028422DC209C00BA8E94 /* UIColor+Gradient.m in Sources */,
 				BCF3028C22DC209C00BA8E94 /* UIImageView+instance.m in Sources */,
@@ -1307,6 +1339,7 @@
 				BC68D17222F01AD20006AB2B /* XHLaunchAdImageManager.m in Sources */,
 				BCF3031022DC49A900BA8E94 /* YTKNetworkPrivate.m in Sources */,
 				BC68D17A22F023300006AB2B /* DHGifImageOperation.m in Sources */,
+				BCD6D5CF22F1759000E4907E /* WebBaseViewController.m in Sources */,
 				BC68D13F22EFF07A0006AB2B /* UIView+EaseBlankPage.m in Sources */,
 				BCF3029322DC209C00BA8E94 /* NSDictionary+Additions.m in Sources */,
 				BCF301F322DC1E2400BA8E94 /* UIView+CYLTabBarControllerExtention.m in Sources */,
@@ -1314,6 +1347,7 @@
 				BCF3028D22DC209C00BA8E94 /* UIViewController+Visible.m in Sources */,
 				BCF3029D22DC209C00BA8E94 /* NSString+DictionaryValue.m in Sources */,
 				BCF3027C22DC209C00BA8E94 /* UILabel+Attribute.m in Sources */,
+				BCD6D5D222F1760600E4907E /* WebViewManager.m in Sources */,
 				BCF302A022DC209C00BA8E94 /* NSString+version.m in Sources */,
 				BCF302E422DC489000BA8E94 /* FCUUID.m in Sources */,
 				BCF302A422DC209C00BA8E94 /* NSDecimalNumber+Calculate.m in Sources */,

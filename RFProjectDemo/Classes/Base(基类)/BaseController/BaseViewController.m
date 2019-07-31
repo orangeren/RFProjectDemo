@@ -149,7 +149,7 @@
 - (void)addReturnBackButton {
     UIButton *returnBack = [UIButton buttonWithType:UIButtonTypeCustom];
     returnBack. frame = CGRectMake(15, 5, 38, 38);
-    [returnBack setImage:[UIImage imageNamed:@"nav_back_black"] forState:UIControlStateNormal];
+    [returnBack setImage:[UIImage imageNamed:@"Navi_back"] forState:UIControlStateNormal];
     returnBack.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [returnBack addTarget:self action:@selector(clickReturnBackEvent)forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *returnBackItem = [[UIBarButtonItem alloc] initWithCustomView:returnBack];
