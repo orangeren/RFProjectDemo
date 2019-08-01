@@ -16,7 +16,7 @@
 #define BaseUrl          @"http://api.jochtech.cn"
 // >>>>>>>>>> 测试环境 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 #else
-#define BaseUrl          @"http://192.168.1.151:8080"
+#define BaseUrl          @"http://112.30.194.102:8081/sales/"
 #endif
 
 

@@ -3,14 +3,15 @@ platform:ios, ‘8.0’
 target "RFProjectDemo" do
 
 pod 'AFNetworking','3.1.0'
+pod 'YTKNetwork'
 pod 'SDWebImage'
 pod 'IQKeyboardManager'
 pod 'SDCycleScrollView', '~> 1.66'
 pod 'MJRefresh', '~> 3.1.12'
 pod 'MJExtension'
-pod 'Masonry', '~> 1.0.2'
+pod 'Masonry'
 pod 'TZImagePickerController'
-
+pod 'AMapLocation-NO-IDFA'
 
 
 end

@@ -8,7 +8,10 @@
 
 #import "AppDelegate.h"
 #import "MainTabBarController.h"
+
+#import "AppBaseConfig.h"
 #import "DHGuidePageHUD.h"
+
 
 @interface AppDelegate ()
 
@@ -25,6 +28,7 @@
     [self.window makeKeyAndVisible];
     
     
+    [AppBaseConfig startAppBaseConfig:launchOptions];
     
     
     /** 引导页 - App生命期间只运行一次 */

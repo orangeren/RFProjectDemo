@@ -13,7 +13,7 @@
 
 @property (strong, nonatomic) EaseBlankPageView *blankPageView;
 
-- (void)configBlankPage:(EaseBlankPageType)blankPageType hasData:(BOOL)hasData hasError:(BOOL)hasError reloadButtonBlock:(void(^)(id sender))block;
+- (void)configBlankPage:(EaseBlankPageType)blankPageType hasData:(BOOL)hasData reloadButtonBlock:(void(^)(id sender))block;
 
 @end
 

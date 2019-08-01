@@ -22,7 +22,7 @@ static char BlankPageViewKey;
 }
 
 
-- (void)configBlankPage:(EaseBlankPageType)blankPageType hasData:(BOOL)hasData hasError:(BOOL)hasError reloadButtonBlock:(void(^)(id sender))block {
+- (void)configBlankPage:(EaseBlankPageType)blankPageType hasData:(BOOL)hasData reloadButtonBlock:(void(^)(id sender))block {
     
     if (hasData) {
         if (self.blankPageView) {
@@ -40,7 +40,7 @@ static char BlankPageViewKey;
     self.blankPageView.hidden = NO;
     [self.blankPageContainer addSubview:self.blankPageView];
     
-    [self.blankPageView configWithType:blankPageType hasData:hasData hasError:hasError reloadButtonBlock:block];
+    [self.blankPageView configWithType:blankPageType hasData:hasData reloadButtonBlock:block];
 }
 
 

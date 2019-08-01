@@ -11,7 +11,7 @@
 typedef NS_ENUM(NSInteger, EaseBlankPageType) {
     EaseBlankPageTypeProject = 0,   //默认（图片+按钮）
     EaseBlankPageTypeNoButton,      //默认（图片）
-    EaseBlankPageTypeLoadFail       //加载失败
+    EaseBlankPageTypeLoadFail       //无网络
     
 };
 
@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger, EaseBlankPageType) {
  hasError   : 加载失败  - 先判断 是否失败，再判断 是否有数据
  hasData    : 页面是否有数据
  */
-- (void)configWithType:(EaseBlankPageType)blankPageType hasData:(BOOL)hasData hasError:(BOOL)hasError reloadButtonBlock:(void(^)(id sender))block;
+- (void)configWithType:(EaseBlankPageType)blankPageType hasData:(BOOL)hasData reloadButtonBlock:(void(^)(id sender))block;
 
 @end
 

@@ -20,7 +20,7 @@
 
 
 
-- (void)configWithType:(EaseBlankPageType)blankPageType hasData:(BOOL)hasData hasError:(BOOL)hasError reloadButtonBlock:(void (^)(id))block{
+- (void)configWithType:(EaseBlankPageType)blankPageType hasData:(BOOL)hasData reloadButtonBlock:(void (^)(id))block{
     
     if (hasData) {
         [self removeFromSuperview];
@@ -44,7 +44,7 @@
     if (!_tipLabel) {
         _tipLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _tipLabel.numberOfLines = 0;
-        _tipLabel.font = FONT_Regular(fitW(12));
+        _tipLabel.font = FONT_Regular(fitW(14));
         _tipLabel.textColor = K_666Color;
         _tipLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_tipLabel];
@@ -69,88 +69,76 @@
         [_reloadButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self);
             make.top.mas_equalTo(self.tipLabel.mas_bottom).mas_offset(20);
-            make.size.mas_equalTo(CGSizeMake(fitW(228), fitW(44)));
+            make.size.mas_equalTo(CGSizeMake(fitW(200), fitW(44)));
         }];
         _reloadButton.layer.cornerRadius = fitW(22);
         _reloadButton.layer.masksToBounds = YES;
+        //_reloadButton.layer.borderWidth = 0.5;
+        //_reloadButton.layer.borderColor = K_666Color.CGColor;
     }
     _reloadButton.hidden = NO;
     _reloadButtonBlock = block;
     
     
-    if (hasError) {
-        /** 加载失败 */
-        [_blankImageV setImage:[UIImage imageNamed:@"blankpage_image_loadFail"]];
-        _tipLabel.text = @"貌似出了点差错";
-        
-        if (blankPageType == EaseBlankPageTypeLoadFail) {
-            _reloadButton.hidden = YES;
-        }
+    /** 空白数据 */
+    if (_reloadButton) {
+        _reloadButton.hidden = NO;
     }
-    else {
-        /** 空白数据 */
-        if (_reloadButton) {
-            _reloadButton.hidden = NO;
-        }
-        NSString *imageName, *tipStr;
-        switch (blankPageType) {
-            case EaseBlankPageTypeProject: {
-                imageName = @"blankpage_image_Sleep";
-                tipStr = @"当前还未有数据";
-                if (_reloadButton) {
-                    [_reloadButton setImage:[UIImage imageNamed:@"blankpage_button_reload"] forState:UIControlStateNormal];
-                }
-            } break;
-            case EaseBlankPageTypeNoButton: {
-                imageName = @"blankpage_image_Sleep";
-                tipStr = @"当前还未有数据";
-                if (_reloadButton) {
-                    _reloadButton.hidden = YES;
-                }
-            } break;
-                
-            default: {
-                imageName = @"blankpage_image_Sleep";
-                tipStr = @"当前还未有数据";
-                if (_reloadButton) {
-                    [_reloadButton setImage:[UIImage imageNamed:@"blankpage_button_reload"] forState:UIControlStateNormal];
-                }
-            } break;
-        }
-        [_blankImageV setImage:[UIImage imageNamed:imageName]];
-        NSDictionary *dic = @{NSKernAttributeName:@.5f};
-        NSMutableAttributedString * attributedString = [[NSMutableAttributedString alloc] initWithString:tipStr attributes:dic];
-        NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-        [paragraphStyle setAlignment:NSTextAlignmentCenter];
-        [paragraphStyle setLineSpacing:5];//行间距
-        [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [tipStr length])];
-        
-        _tipLabel.attributedText = attributedString;
-        
-        
-        //        _tipLabel.text = tipStr;
+    NSString *imageName, *tipStr;
+    switch (blankPageType) {
+        case EaseBlankPageTypeLoadFail: { /** 加载失败 */
+            imageName = @"blankpage_image_loadFail";
+            tipStr = @"貌似出了点差错";
+            if (_reloadButton) {
+                _reloadButton.backgroundColor = UIColor.clearColor;
+                [_reloadButton setImage:[UIImage imageNamed:@"blankpage_button_reload"] forState:UIControlStateNormal];
+            }
+        } break;
+        case EaseBlankPageTypeProject: {
+            imageName = @"blankpage_image_Sleep";
+            tipStr = @"当前还未有数据";
+            if (_reloadButton) {
+                _reloadButton.backgroundColor = UIColor.clearColor;
+                [_reloadButton setImage:[UIImage imageNamed:@"blankpage_button_reload"] forState:UIControlStateNormal];
+            }
+        } break;
+        case EaseBlankPageTypeNoButton: {
+            imageName = @"blankpage_image_Sleep";
+            tipStr = @"当前还未有数据";
+            if (_reloadButton) {
+                _reloadButton.hidden = YES;
+            }
+        } break;
+            
+        default: {
+            imageName = @"blankpage_image_Sleep";
+            tipStr = @"当前还未有数据";
+            if (_reloadButton) {
+                [_reloadButton setImage:[UIImage imageNamed:@"blankpage_button_reload"] forState:UIControlStateNormal];
+            }
+        } break;
     }
+    [_blankImageV setImage:[UIImage imageNamed:imageName]];
+    
+    NSDictionary * dic = @{NSKernAttributeName:@.5f};
+    NSMutableAttributedString * attributedString = [[NSMutableAttributedString alloc] initWithString:tipStr attributes:dic];
+    NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setAlignment:NSTextAlignmentCenter];
+    [paragraphStyle setLineSpacing:5];//行间距
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [tipStr length])];
+    _tipLabel.attributedText = attributedString;
+    //_tipLabel.text = tipStr;
 }
 
 - (void)reloadButtonClicked:(id)sender {
-    /** 1.0.0 -1.2.2 */
-    //    self.hidden = YES;
-    //    [self removeFromSuperview];
-    //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    //        if (_reloadButtonBlock) {
-    //            _reloadButtonBlock(sender);
-    //        }
-    //    });
-    /** 134修改 */
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.hidden = YES;
+        [self removeFromSuperview];
+//    });
+    
     if (_reloadButtonBlock) {
         _reloadButtonBlock(sender);
     }
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.hidden = YES;
-        [self removeFromSuperview];
-    });
-    
 }
 
 

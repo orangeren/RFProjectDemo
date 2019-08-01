@@ -8,7 +8,7 @@
 
 #import "WebBaseViewController.h"
 #import "WebViewManager.h"
-#import "ToolsAlertSheet.h"
+#import "AlertSheetTools.h"
 
 static void *WkwebBrowserContext = &WkwebBrowserContext;
 
@@ -324,7 +324,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
         NSString *message = @"拨打电话";
         NSArray *arr = @[telStr, @"取消"];
        
-        [ToolsAlertSheet sheetTitle:message message:nil arrTitleAction:arr superVC:self blockClick:^(NSInteger index) {
+        [AlertSheetTools sheetTitle:message message:nil arrTitleAction:arr superVC:self blockClick:^(NSInteger index) {
             if (0 == index) {
                 dispatch_after(0.3, dispatch_get_main_queue(), ^{
                     UIApplication *app = [UIApplication sharedApplication];

@@ -14,6 +14,9 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - AMapFoundation-NO-IDFA (1.5.7)
+  - AMapLocation-NO-IDFA (2.6.2):
+    - AMapFoundation-NO-IDFA (~> 1.4)
   - IQKeyboardManager (6.4.0)
   - Masonry (1.0.2)
   - MJExtension (3.0.17)
@@ -24,20 +27,26 @@ PODS:
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
   - TZImagePickerController (3.2.1)
+  - YTKNetwork (2.0.4):
+    - AFNetworking (~> 3.0)
 
 DEPENDENCIES:
   - AFNetworking (= 3.1.0)
+  - AMapLocation-NO-IDFA
   - IQKeyboardManager
-  - Masonry (~> 1.0.2)
+  - Masonry
   - MJExtension
   - MJRefresh (~> 3.1.12)
   - SDCycleScrollView (~> 1.66)
   - SDWebImage
   - TZImagePickerController
+  - YTKNetwork
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - AMapFoundation-NO-IDFA
+    - AMapLocation-NO-IDFA
     - IQKeyboardManager
     - Masonry
     - MJExtension
@@ -45,9 +54,12 @@ SPEC REPOS:
     - SDCycleScrollView
     - SDWebImage
     - TZImagePickerController
+    - YTKNetwork
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AMapFoundation-NO-IDFA: 9088085827c831811bb0fd3afd96b99963a7cf71
+  AMapLocation-NO-IDFA: d7792c8c516f415e186f1bc25946f1a58ca6a583
   IQKeyboardManager: fcef267266379c003181fc3592f6bdb8bf4db839
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
@@ -55,7 +67,8 @@ SPEC CHECKSUMS:
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   TZImagePickerController: bf4c57b98d8707fce41ea6be872414a71c7a8c9d
+  YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
 
-PODFILE CHECKSUM: a9e7373de9de15d1527a6ac0b930f8f583c8305f
+PODFILE CHECKSUM: 6a9625255b9fb1d8f253372de813aba959d786ea
 
 COCOAPODS: 1.7.4
