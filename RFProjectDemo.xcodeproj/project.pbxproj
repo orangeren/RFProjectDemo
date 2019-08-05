@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC54A0C622F804EE001FBD37 /* UIViewController+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = BC54A0C222F804EE001FBD37 /* UIViewController+Swizzle.m */; };
+		BC54A0C722F804EE001FBD37 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = BC54A0C522F804EE001FBD37 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		BC54A0CA22F8325F001FBD37 /* navibar_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC54A0C822F8325F001FBD37 /* navibar_close@2x.png */; };
+		BC54A0CB22F8325F001FBD37 /* navibar_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC54A0C922F8325F001FBD37 /* navibar_close@3x.png */; };
 		BC68D12322EFE1240006AB2B /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68D12222EFE1240006AB2B /* MineViewController.m */; };
 		BC68D12A22EFE5840006AB2B /* EaseBlankPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68D12922EFE5840006AB2B /* EaseBlankPageView.m */; };
 		BC68D13222EFE9760006AB2B /* blankpage_button_reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC68D12D22EFE9760006AB2B /* blankpage_button_reload@2x.png */; };
@@ -109,8 +113,6 @@
 		BCF302A622DC209C00BA8E94 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF3027122DC209B00BA8E94 /* NSDate+Utilities.m */; };
 		BCF302A722DC209C00BA8E94 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF3027222DC209B00BA8E94 /* NSDate+Extension.m */; };
 		BCF302B422DC25A700BA8E94 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF302B322DC25A700BA8E94 /* BaseViewController.m */; };
-		BCF302BA22DC269C00BA8E94 /* UIViewController+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF302B622DC269C00BA8E94 /* UIViewController+Swizzle.m */; };
-		BCF302BB22DC269C00BA8E94 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF302B922DC269C00BA8E94 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		BCF302C722DC291000BA8E94 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF302C622DC291000BA8E94 /* BaseNavigationController.m */; };
 		BCF302CA22DC292600BA8E94 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF302C822DC292600BA8E94 /* BaseTableViewController.m */; };
 		BCF302CE22DC295300BA8E94 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF302CD22DC295300BA8E94 /* HomeViewController.m */; };
@@ -125,12 +127,20 @@
 		BCF302F822DC48D000BA8E94 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF302F022DC48D000BA8E94 /* SVIndefiniteAnimatedView.m */; };
 		BCF302F922DC48D000BA8E94 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BCF302F222DC48D000BA8E94 /* SVProgressHUD.bundle */; };
 		BCF3031A22DC49CE00BA8E94 /* BaseRequestSerivce.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF3031922DC49CE00BA8E94 /* BaseRequestSerivce.m */; };
+		BCF9EBC522F408D700CC5637 /* DeviceAuthTools.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF9EBC422F408D700CC5637 /* DeviceAuthTools.m */; };
+		BCF9EBC822F41A0400CC5637 /* UmShareHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF9EBC722F41A0400CC5637 /* UmShareHelper.m */; };
 		D34A46BF2CF2AF55F8AF91E7 /* libPods-RFProjectDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D81886D964C9E6BA061E377B /* libPods-RFProjectDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5CE4C3A4AC2F1C5BD069157C /* Pods-RFProjectDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RFProjectDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RFProjectDemo/Pods-RFProjectDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		89404DFE80CCCEFE959BD1D6 /* Pods-RFProjectDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RFProjectDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RFProjectDemo/Pods-RFProjectDemo.release.xcconfig"; sourceTree = "<group>"; };
+		BC54A0C222F804EE001FBD37 /* UIViewController+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzle.m"; sourceTree = "<group>"; };
+		BC54A0C322F804EE001FBD37 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		BC54A0C422F804EE001FBD37 /* UIViewController+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swizzle.h"; sourceTree = "<group>"; };
+		BC54A0C522F804EE001FBD37 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		BC54A0C822F8325F001FBD37 /* navibar_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navibar_close@2x.png"; sourceTree = "<group>"; };
+		BC54A0C922F8325F001FBD37 /* navibar_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navibar_close@3x.png"; sourceTree = "<group>"; };
 		BC68D12122EFE1240006AB2B /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		BC68D12222EFE1240006AB2B /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		BC68D12822EFE5840006AB2B /* EaseBlankPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EaseBlankPageView.h; sourceTree = "<group>"; };
@@ -334,10 +344,6 @@
 		BCF302AD22DC24F200BA8E94 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		BCF302B222DC25A700BA8E94 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		BCF302B322DC25A700BA8E94 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		BCF302B622DC269C00BA8E94 /* UIViewController+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzle.m"; sourceTree = "<group>"; };
-		BCF302B722DC269C00BA8E94 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
-		BCF302B822DC269C00BA8E94 /* UIViewController+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swizzle.h"; sourceTree = "<group>"; };
-		BCF302B922DC269C00BA8E94 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		BCF302C522DC291000BA8E94 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		BCF302C622DC291000BA8E94 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		BCF302C822DC292600BA8E94 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
@@ -367,6 +373,10 @@
 		BCF3031822DC49CE00BA8E94 /* BaseRequestSerivce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseRequestSerivce.h; sourceTree = "<group>"; };
 		BCF3031922DC49CE00BA8E94 /* BaseRequestSerivce.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseRequestSerivce.m; sourceTree = "<group>"; };
 		BCF3031C22DC4B4B00BA8E94 /* ReminderMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderMacros.h; sourceTree = "<group>"; };
+		BCF9EBC322F408D700CC5637 /* DeviceAuthTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceAuthTools.h; sourceTree = "<group>"; };
+		BCF9EBC422F408D700CC5637 /* DeviceAuthTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceAuthTools.m; sourceTree = "<group>"; };
+		BCF9EBC622F41A0400CC5637 /* UmShareHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UmShareHelper.h; sourceTree = "<group>"; };
+		BCF9EBC722F41A0400CC5637 /* UmShareHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UmShareHelper.m; sourceTree = "<group>"; };
 		D81886D964C9E6BA061E377B /* libPods-RFProjectDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RFProjectDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -389,6 +399,17 @@
 				89404DFE80CCCEFE959BD1D6 /* Pods-RFProjectDemo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC54A0C122F804EE001FBD37 /* UINavigationController(侧滑) */ = {
+			isa = PBXGroup;
+			children = (
+				BC54A0C322F804EE001FBD37 /* UINavigationController+FDFullscreenPopGesture.h */,
+				BC54A0C522F804EE001FBD37 /* UINavigationController+FDFullscreenPopGesture.m */,
+				BC54A0C422F804EE001FBD37 /* UIViewController+Swizzle.h */,
+				BC54A0C222F804EE001FBD37 /* UIViewController+Swizzle.m */,
+			);
+			path = "UINavigationController(侧滑)";
 			sourceTree = "<group>";
 		};
 		BC68D12022EFE1090006AB2B /* MinePage */ = {
@@ -425,6 +446,8 @@
 		BC68D12622EFE4CC0006AB2B /* UmengHelper(友盟管理) */ = {
 			isa = PBXGroup;
 			children = (
+				BCF9EBC622F41A0400CC5637 /* UmShareHelper.h */,
+				BCF9EBC722F41A0400CC5637 /* UmShareHelper.m */,
 			);
 			path = "UmengHelper(友盟管理)";
 			sourceTree = "<group>";
@@ -554,6 +577,8 @@
 		BCD6D5CC22F1757200E4907E /* WebVC */ = {
 			isa = PBXGroup;
 			children = (
+				BC54A0C822F8325F001FBD37 /* navibar_close@2x.png */,
+				BC54A0C922F8325F001FBD37 /* navibar_close@3x.png */,
 				BCD6D5D322F17DB100E4907E /* share_nav@2x.png */,
 				BCD6D5D422F17DB100E4907E /* share_nav@3x.png */,
 				BCD6D5CD22F1759000E4907E /* WebBaseViewController.h */,
@@ -609,9 +634,9 @@
 		BCF301DF22DC1C6600BA8E94 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				BC54A0C122F804EE001FBD37 /* UINavigationController(侧滑) */,
 				BCF302E722DC48D000BA8E94 /* SVProgressHUD */,
 				BCF302CF22DC2B9200BA8E94 /* Reachablity */,
-				BCF302B522DC269C00BA8E94 /* UINavigationController */,
 				BCF301E322DC1E2400BA8E94 /* CYLTabBarController */,
 			);
 			path = "Vender(第三方)";
@@ -967,17 +992,6 @@
 			path = "Base(基类)";
 			sourceTree = "<group>";
 		};
-		BCF302B522DC269C00BA8E94 /* UINavigationController */ = {
-			isa = PBXGroup;
-			children = (
-				BCF302B722DC269C00BA8E94 /* UINavigationController+FDFullscreenPopGesture.h */,
-				BCF302B922DC269C00BA8E94 /* UINavigationController+FDFullscreenPopGesture.m */,
-				BCF302B822DC269C00BA8E94 /* UIViewController+Swizzle.h */,
-				BCF302B622DC269C00BA8E94 /* UIViewController+Swizzle.m */,
-			);
-			path = UINavigationController;
-			sourceTree = "<group>";
-		};
 		BCF302C422DC288100BA8E94 /* EaseBlankPage(空白页提示) */ = {
 			isa = PBXGroup;
 			children = (
@@ -1055,6 +1069,7 @@
 		BCF302D822DC2E9500BA8E94 /* Tool-工具类 */ = {
 			isa = PBXGroup;
 			children = (
+				BCF9EBC222F408B400CC5637 /* DeviceAuth(设备权限) */,
 				BC68D12722EFE4D60006AB2B /* Reachability(网络状态) */,
 				BC68D12622EFE4CC0006AB2B /* UmengHelper(友盟管理) */,
 				BCF302DB22DC2FE700BA8E94 /* AlertViewManager(弹框) */,
@@ -1147,6 +1162,15 @@
 			path = "BaseService(YTKRequest)";
 			sourceTree = "<group>";
 		};
+		BCF9EBC222F408B400CC5637 /* DeviceAuth(设备权限) */ = {
+			isa = PBXGroup;
+			children = (
+				BCF9EBC322F408D700CC5637 /* DeviceAuthTools.h */,
+				BCF9EBC422F408D700CC5637 /* DeviceAuthTools.m */,
+			);
+			path = "DeviceAuth(设备权限)";
+			sourceTree = "<group>";
+		};
 		DA584958E2EEDF58F0271599 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1216,10 +1240,12 @@
 			files = (
 				BC68D13B22EFECB80006AB2B /* blankpage_image_loadFail@2x.png in Resources */,
 				BCF301D222DC1AFB00BA8E94 /* Assets.xcassets in Resources */,
+				BC54A0CB22F8325F001FBD37 /* navibar_close@3x.png in Resources */,
 				BC68D17922F023300006AB2B /* GuideImage.bundle in Resources */,
 				BC68D13C22EFECB80006AB2B /* blankpage_image_loadFail@3x.png in Resources */,
 				BC68D13822EFEB690006AB2B /* blankpage_image_Sleep@3x.png in Resources */,
 				BCF302F922DC48D000BA8E94 /* SVProgressHUD.bundle in Resources */,
+				BC54A0CA22F8325F001FBD37 /* navibar_close@2x.png in Resources */,
 				BC68D13722EFEB690006AB2B /* blankpage_image_Sleep@2x.png in Resources */,
 				BC68D13222EFE9760006AB2B /* blankpage_button_reload@2x.png in Resources */,
 				BCD6D5D522F17DB100E4907E /* share_nav@2x.png in Resources */,
@@ -1272,12 +1298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF9EBC822F41A0400CC5637 /* UmShareHelper.m in Sources */,
 				BCF3029C22DC209C00BA8E94 /* NSString+Additions.m in Sources */,
-				BCF302BA22DC269C00BA8E94 /* UIViewController+Swizzle.m in Sources */,
 				BC68D17122F01AD20006AB2B /* XHLaunchAdCache.m in Sources */,
 				BCF301F622DC1E2400BA8E94 /* CYLTabBar.m in Sources */,
 				BCD6D5DF22F1969F00E4907E /* AppBaseConfig.m in Sources */,
 				BCF301F722DC1E2400BA8E94 /* CYLPlusButton.m in Sources */,
+				BC54A0C622F804EE001FBD37 /* UIViewController+Swizzle.m in Sources */,
 				BCF3027E22DC209C00BA8E94 /* UIButton+instance.m in Sources */,
 				BCD6D5D922F182E500E4907E /* AlertSheetTools.m in Sources */,
 				BCF302E522DC489000BA8E94 /* UICKeyChainStore.m in Sources */,
@@ -1285,13 +1312,13 @@
 				BCF3028C22DC209C00BA8E94 /* UIImageView+instance.m in Sources */,
 				BCF3028B22DC209C00BA8E94 /* UIImageView+Addition.m in Sources */,
 				BC68D16F22F01AD20006AB2B /* XHLaunchAdImageView+XHLaunchAdCache.m in Sources */,
+				BCF9EBC522F408D700CC5637 /* DeviceAuthTools.m in Sources */,
 				BCF3028F22DC209C00BA8E94 /* UIViewController+Nav.m in Sources */,
 				BCF3028222DC209C00BA8E94 /* UIButton+Attribute.m in Sources */,
 				BC85DC3A22F2F3CD00AC9EDF /* AMapLocationTools.m in Sources */,
 				BCF301F422DC1E2400BA8E94 /* UITabBarItem+CYLTabBarControllerExtention.m in Sources */,
 				BC68D17B22F023300006AB2B /* DHGuidePageHUD.m in Sources */,
 				BCF3029422DC209C00BA8E94 /* NSDictionary+JSONString.m in Sources */,
-				BCF302BB22DC269C00BA8E94 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				BCF302F622DC48D000BA8E94 /* SVProgressHUD+addition.m in Sources */,
 				BC68D14222EFF6270006AB2B /* AdvertiseHelper.m in Sources */,
 				BCF3028322DC209C00BA8E94 /* UIButton+Administer.m in Sources */,
@@ -1351,6 +1378,7 @@
 				BCF3029A22DC209C00BA8E94 /* NSString+Base64.m in Sources */,
 				BC68D17222F01AD20006AB2B /* XHLaunchAdImageManager.m in Sources */,
 				BC68D17A22F023300006AB2B /* DHGifImageOperation.m in Sources */,
+				BC54A0C722F804EE001FBD37 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				BCD6D5CF22F1759000E4907E /* WebBaseViewController.m in Sources */,
 				BC68D13F22EFF07A0006AB2B /* UIView+EaseBlankPage.m in Sources */,
 				BCF3029322DC209C00BA8E94 /* NSDictionary+Additions.m in Sources */,

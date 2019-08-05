@@ -8,6 +8,7 @@
 
 #import "MainTabBarController.h"
 #import "BaseNavigationController.h"
+#import "RTRootNavigationController.h"
 #import "AppDelegate.h"
 
 #import "HomeViewController.h"
@@ -39,8 +40,9 @@
 
 /* Controllers */
 - (NSArray *)viewControllers {
-    UIViewController *tab1Navi = [[BaseNavigationController alloc] initWithRootViewController:[HomeViewController new]];
-    UIViewController *tab2Navi = [[BaseNavigationController alloc] initWithRootViewController:[MineViewController new]];
+    RTContainerNavigationController *tab1Navi = [[RTContainerNavigationController alloc] initWithRootViewController:[HomeViewController new]];
+    
+    RTContainerNavigationController *tab2Navi = [[RTContainerNavigationController alloc] initWithRootViewController:[MineViewController new]];
     
     NSArray *viewControllers = @[tab1Navi, tab2Navi];
     return viewControllers;

@@ -7,9 +7,10 @@
 //
 
 #import "HomeViewController.h"
-#import "MineViewController.h"
-
 #import "ZYNetworkAccessibity.h"
+
+#import "MineViewController.h"
+#import "UmShareHelper.h"
 
 @interface HomeViewController ()
 
@@ -34,10 +35,15 @@
 }
 
 - (void)btnClicked {
-    WebBaseViewController *web = [[WebBaseViewController alloc] initWithUrl:@"http://www.baidu.com"];
+    WebBaseViewController *web = [[WebBaseViewController alloc] initWithUrl:@"http://220.180.112.249/index_wx.php/Index/app_route?id=13"];
     [self.navigationController pushViewController:web animated:YES];
-}
 
+//    NSDictionary *dict = @{@"shareAppUrl"       :@"http://mobile.umeng.com/social",
+//                           @"shareAppImage"     :@"https://mobile.umeng.com/images/pic/home/social/img-1.png",
+//                           @"shareAppTitle"     :@"标题",
+//                           @"shareAppContent"   :@"内容"};
+//    [UmShareHelper shareWithInfo:dict];
+}
 
 
 

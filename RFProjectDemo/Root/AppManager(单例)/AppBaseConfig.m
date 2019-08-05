@@ -10,6 +10,7 @@
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "ReachabilityTools.h"
+#import "UmShareHelper.h"
 
 @implementation AppBaseConfig
 
@@ -26,6 +27,10 @@
     
     /* 网络访问权限监听 */
     [ReachabilityTools networkAccessibityMonitoring];
+    
+    /* 友盟分享 */
+    [UmShareHelper addUmsocialManager];
+    [UmShareHelper configUSharePlatforms];
 }
 
 

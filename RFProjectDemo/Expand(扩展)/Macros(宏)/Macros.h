@@ -73,7 +73,7 @@
 
 //一些缩写
 #define GetImage(imageName)     [UIImage imageNamed:[NSString stringWithFormat:@"%@", imageName]]
-
+#define kKeyWindow              [UIApplication sharedApplication].keyWindow
 
 
 // 文件路径

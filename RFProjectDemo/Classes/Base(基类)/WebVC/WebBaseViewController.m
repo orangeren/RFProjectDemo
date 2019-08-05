@@ -146,14 +146,14 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 // 返回按钮
 - (UIBarButtonItem *)backItem {
     if (!_backItem) {
-        _backItem = [[UIBarButtonItem alloc] init];
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        UIImage *image = [UIImage imageNamed:@"Navi_back"];
-        [btn setImage:image forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(backNative) forControlEvents:UIControlEventTouchUpInside];
-        btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        btn.frame = CGRectMake(15, 0, 44, 44);
-        _backItem.customView = btn;
+        UIButton *returnBack = [UIButton buttonWithType:UIButtonTypeCustom];
+        returnBack.frame = CGRectMake(15, 0, 38, 44);
+        [returnBack setImage:[UIImage imageNamed:@"Navi_back"] forState:UIControlStateNormal];
+        returnBack.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+        [returnBack addTarget:self action:@selector(backNative)forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *returnBackItem = [[UIBarButtonItem alloc] initWithCustomView:returnBack];
+       
+        _backItem = returnBackItem;
     }
     return _backItem;
 }
@@ -161,7 +161,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 // 关闭按钮
 - (UIBarButtonItem *)closeItem {
     if (!_closeItem) {
-        _closeItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(closeNative)];
+        _closeItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navibar_close"] style:UIBarButtonItemStylePlain target:self action:@selector(closeNative)];
         [_closeItem setTintColor:[UIColor colorWithHexString:COLOR_BLACK_STR]];
     }
     return _closeItem;
@@ -182,22 +182,29 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
                     return;
                 }
             }
-            [self closeNative];
+            [self.navigationController popViewControllerAnimated:YES];
         } else {
             [self.webView goBack];
         }
-        //同时设置返回按钮和关闭按钮为导航栏左边的按钮
-        self.navigationItem.leftBarButtonItems = @[self.backItem, self.closeItem];
     }
     else {
-        [self closeNative];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
-
-#pragma mark - 点击关闭的方法
 - (void)closeNative {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+#pragma mark - 更新左导航按钮
+- (void)updateLeftNaviItems {
+    if ([self.webView canGoBack]) {
+        self.navigationItem.leftBarButtonItems = @[self.backItem, self.closeItem];
+    } else {
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+        self.navigationItem.leftBarButtonItems = @[self.backItem];
+    }
+}
+
 
 #pragma mark - 右侧导航栏按钮点击事件 (继承自BaseVC)
 - (void)right_button_event:(UIButton *)sender {
@@ -240,6 +247,10 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     //    NSString *promptCode = [NSString stringWithFormat:@"getConfigFromApp(\'%@\')", [[WLHH5UserInfo sharedXLH5UserInfo].pointInfo_H5 mj_JSONString]];
     //    NSLog(@"%s页面获取定位信息:%@", __func__, [WLHH5UserInfo sharedXLH5UserInfo].pointInfo_H5);
     //    [self.webView evaluateJavaScript:promptCode completionHandler:^(id _Nullable response, NSError * _Nullable error) {}];
+    
+    
+    // 更新导航按钮
+    [self updateLeftNaviItems];
 }
 // 页面加载失败时调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation {
@@ -286,6 +297,12 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     } else if ([requestString rangeOfString:@"about:blank"].location != NSNotFound) {
         // 空页面 不跳转
         NSLog(@"空页面========");
+        decisionHandler(WKNavigationActionPolicyCancel);
+    } else if ([requestString rangeOfString:@"openNewWebPage"].location != NSNotFound) {
+        // 打开一个新的web页面
+        NSLog(@"新的web页面========");
+        WebBaseViewController *webPage = [[WebBaseViewController alloc] initWithUrl:requestString];
+        [self.navigationController pushViewController:webPage animated:YES];
         decisionHandler(WKNavigationActionPolicyCancel);
     } else if ([requestString rangeOfString:@"weixin://"].location != NSNotFound || [requestString rangeOfString:@"mqq://"].location != NSNotFound) {
         // 打开QQ，微信

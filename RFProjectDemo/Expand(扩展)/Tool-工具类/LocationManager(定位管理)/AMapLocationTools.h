@@ -15,7 +15,7 @@ typedef void (^CompletedLoctionBlock)(NSString *latitudeString, NSString *longit
 @interface AMapLocationTools : NSObject
 
 /** 开始设置定位, 并且放回需要持有 AMapLocationManager 这个对象 */
-+ (AMapLocationManager *)startLocationWithComplish:(CompletedLoctionBlock)locationBlock;
++ (void)startLocationWithComplish:(CompletedLoctionBlock)locationBlock;
 
 
 /** 获取纬度 */

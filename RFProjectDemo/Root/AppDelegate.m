@@ -7,11 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "RTRootNavigationController.h"
 #import "MainTabBarController.h"
 
 #import "AppBaseConfig.h"
 #import "DHGuidePageHUD.h"
 
+#import <UMShare/UMShare.h>
 
 @interface AppDelegate ()
 
@@ -24,7 +26,7 @@
     
     /** 设置rootController */
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [MainTabBarController new];
+    self.window.rootViewController = [[RTRootNavigationController alloc] initWithRootViewController:[MainTabBarController new]];
     [self.window makeKeyAndVisible];
     
     
@@ -42,5 +44,36 @@
     return YES;
 }
 
+
+
+
+
+
+#pragma mark - 设置系统回调
+// NOTE: iOS 低于 9.0
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    if (!result) {
+        // 其他如支付等SDK的回调
+        
+    }
+    return result;
+}
+// NOTE: 9.0以后使用新API接口
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url options:options];
+    if (!result) {
+        // 其他如支付等SDK的回调
+    }
+    return result;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
+    if (!result) {
+        // 其他如支付等SDK的回调
+    }
+    return result;
+}
 
 @end
