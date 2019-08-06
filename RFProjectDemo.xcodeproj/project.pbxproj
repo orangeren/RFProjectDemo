@@ -51,6 +51,8 @@
 		BCD6D5DC22F1963500E4907E /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD6D5DB22F1963500E4907E /* AppManager.m */; };
 		BCD6D5DF22F1969F00E4907E /* AppBaseConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD6D5DE22F1969F00E4907E /* AppBaseConfig.m */; };
 		BCD6D5E522F19E1000E4907E /* UploadImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD6D5E422F19E1000E4907E /* UploadImageService.m */; };
+		BCE17F9222F90A5900B9E8BF /* UIViewController+RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE17F8B22F90A5900B9E8BF /* UIViewController+RTRootNavigationController.m */; };
+		BCE17F9422F90A5900B9E8BF /* RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE17F8F22F90A5900B9E8BF /* RTRootNavigationController.m */; };
 		BCF301CA22DC1AF700BA8E94 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF301C922DC1AF700BA8E94 /* AppDelegate.m */; };
 		BCF301D222DC1AFB00BA8E94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF301D122DC1AFB00BA8E94 /* Assets.xcassets */; };
 		BCF301D822DC1AFB00BA8E94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF301D722DC1AFB00BA8E94 /* main.m */; };
@@ -213,6 +215,10 @@
 		BCD6D5DE22F1969F00E4907E /* AppBaseConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppBaseConfig.m; sourceTree = "<group>"; };
 		BCD6D5E322F19E1000E4907E /* UploadImageService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadImageService.h; sourceTree = "<group>"; };
 		BCD6D5E422F19E1000E4907E /* UploadImageService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadImageService.m; sourceTree = "<group>"; };
+		BCE17F8B22F90A5900B9E8BF /* UIViewController+RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RTRootNavigationController.m"; sourceTree = "<group>"; };
+		BCE17F8C22F90A5900B9E8BF /* RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTRootNavigationController.h; sourceTree = "<group>"; };
+		BCE17F8E22F90A5900B9E8BF /* UIViewController+RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RTRootNavigationController.h"; sourceTree = "<group>"; };
+		BCE17F8F22F90A5900B9E8BF /* RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTRootNavigationController.m; sourceTree = "<group>"; };
 		BCF301C522DC1AF700BA8E94 /* RFProjectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RFProjectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF301C822DC1AF700BA8E94 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BCF301C922DC1AF700BA8E94 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -589,6 +595,17 @@
 			path = WebVC;
 			sourceTree = "<group>";
 		};
+		BCE17F8922F90A5900B9E8BF /* RTRootNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				BCE17F8C22F90A5900B9E8BF /* RTRootNavigationController.h */,
+				BCE17F8F22F90A5900B9E8BF /* RTRootNavigationController.m */,
+				BCE17F8E22F90A5900B9E8BF /* UIViewController+RTRootNavigationController.h */,
+				BCE17F8B22F90A5900B9E8BF /* UIViewController+RTRootNavigationController.m */,
+			);
+			path = RTRootNavigationController;
+			sourceTree = "<group>";
+		};
 		BCF301BC22DC1AF700BA8E94 = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +654,7 @@
 				BC54A0C122F804EE001FBD37 /* UINavigationController(侧滑) */,
 				BCF302E722DC48D000BA8E94 /* SVProgressHUD */,
 				BCF302CF22DC2B9200BA8E94 /* Reachablity */,
+				BCE17F8922F90A5900B9E8BF /* RTRootNavigationController */,
 				BCF301E322DC1E2400BA8E94 /* CYLTabBarController */,
 			);
 			path = "Vender(第三方)";
@@ -1335,6 +1353,7 @@
 				BCF302F522DC48D000BA8E94 /* SVProgressAnimatedView.m in Sources */,
 				BCF3028722DC209C00BA8E94 /* UIView+Administer.m in Sources */,
 				BCF3029522DC209C00BA8E94 /* NSData+Hash.m in Sources */,
+				BCE17F9422F90A5900B9E8BF /* RTRootNavigationController.m in Sources */,
 				BC85DC2C22F2BFB600AC9EDF /* ReachabilityTools.m in Sources */,
 				BCD6D5E522F19E1000E4907E /* UploadImageService.m in Sources */,
 				BCF3028A22DC209C00BA8E94 /* UITextView+PlaceHolder.m in Sources */,
@@ -1400,6 +1419,7 @@
 				BCF3029222DC209C00BA8E94 /* ReflectionLabel.m in Sources */,
 				BCF3028E22DC209C00BA8E94 /* UIViewController+ReturnBack.m in Sources */,
 				BCF301CA22DC1AF700BA8E94 /* AppDelegate.m in Sources */,
+				BCE17F9222F90A5900B9E8BF /* UIViewController+RTRootNavigationController.m in Sources */,
 				BCF302A722DC209C00BA8E94 /* NSDate+Extension.m in Sources */,
 				BC85DC2922F2BE5200AC9EDF /* UserTools.m in Sources */,
 				BCF3027D22DC209C00BA8E94 /* UIButton+CountDown.m in Sources */,

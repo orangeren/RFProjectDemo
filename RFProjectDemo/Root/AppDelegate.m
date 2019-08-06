@@ -11,7 +11,6 @@
 #import "MainTabBarController.h"
 
 #import "AppBaseConfig.h"
-#import "DHGuidePageHUD.h"
 
 #import <UMShare/UMShare.h>
 
@@ -26,19 +25,13 @@
     
     /** 设置rootController */
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[RTRootNavigationController alloc] initWithRootViewController:[MainTabBarController new]];
+    RTRootNavigationController *rootNavi = [[RTRootNavigationController alloc] initWithRootViewControllerNoWrapping:[MainTabBarController new]];
+    self.window.rootViewController = rootNavi;
     [self.window makeKeyAndVisible];
     
     
     [AppBaseConfig startAppBaseConfig:launchOptions];
     
-    
-    /** 引导页 - App生命期间只运行一次 */
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:BOOLFORKEY]) {
-        NSArray *imageNameArray = @[@"GuidePage1", @"GuidePage2", @"GuidePage3", @"GuidePage4", @"GuidePage5"];
-        DHGuidePageHUD *guidePage = [[DHGuidePageHUD alloc] dh_initWithFrame:self.window.frame imageNameArray:imageNameArray buttonIsHidden:NO];
-        [self.window addSubview:guidePage];
-    }
     
     
     return YES;

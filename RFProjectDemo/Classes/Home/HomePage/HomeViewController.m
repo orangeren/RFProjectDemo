@@ -25,7 +25,7 @@
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.backgroundColor = UIColor.cyanColor;
-    btn.frame = CGRectMake(0, 0, KW, 100);
+    btn.frame = CGRectMake(0, 10, KW, 100);
     [btn setTitle:@"百度一下" forState:UIControlStateNormal];
     [self.view addSubview:btn];
     [btn addTarget:self action:@selector(btnClicked) forControlEvents:UIControlEventTouchUpInside];
@@ -43,6 +43,16 @@
 //                           @"shareAppTitle"     :@"标题",
 //                           @"shareAppContent"   :@"内容"};
 //    [UmShareHelper shareWithInfo:dict];
+}
+
+
+
+
+
+
+#pragma mark - BaseViewControllerDataSource
+- (BOOL)hideNavigationBottomLine {
+    return YES;
 }
 
 

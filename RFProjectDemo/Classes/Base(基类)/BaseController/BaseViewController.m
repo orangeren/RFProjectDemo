@@ -18,12 +18,13 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    //导航栏样式
     self.navigationController.navigationBar.barTintColor = K_NavColor;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:K_333Color}];
+    [self.navigationController.navigationBar setTranslucent:NO];
     //[self.navigationController.navigationBar setShadowImage:[UIImage new]];
     
     self.extendedLayoutIncludesOpaqueBars = YES;
-    [self.navigationController.navigationBar setTranslucent:NO];
     //self.edgesForExtendedLayout = UIRectEdgeNone;
     
     [self.navigationController setNavigationBarHidden:NO];

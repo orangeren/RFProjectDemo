@@ -7,9 +7,7 @@
 //
 
 #import "MainTabBarController.h"
-#import "BaseNavigationController.h"
 #import "RTRootNavigationController.h"
-#import "AppDelegate.h"
 
 #import "HomeViewController.h"
 #import "MineViewController.h"
@@ -93,7 +91,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     
     
 }
