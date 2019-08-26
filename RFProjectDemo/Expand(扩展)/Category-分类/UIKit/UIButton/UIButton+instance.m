@@ -58,7 +58,7 @@
 }
 
 /** 指定title里面的字符串的字体颜色 */
-+ (UIButton *)setupButtonTitle:(NSString *)title titleColor:(NSString *)color anotherColorTitle:(NSString *)colorTitle anotherColor:(NSString *)anotherColor titleFont:(CGFloat)fontSize withObject:(NSObject *)obj action:(SEL)action{
++ (UIButton *)setupButtonTitle:(NSString *)title titleColor:(NSString *)color anotherColorTitle:(NSString *)colorTitle anotherColor:(NSString *)anotherColor titleFont:(CGFloat)fontSize withObject:(NSObject *)obj action:(SEL)action {
     if (!title) {
         title = @"";
     }
@@ -86,7 +86,7 @@
 
 
 //   设置带图片和title的按钮
-+ (UIButton *)setupButtonWithImageStr:(NSString *)imageStr title:(NSString *)title titleColor:(UIColor *)color titleFont:(CGFloat)fontSize withObject:(NSObject *)obj action:(SEL)action{
++ (UIButton *)setupButtonWithImageStr:(NSString *)imageStr title:(NSString *)title titleColor:(UIColor *)color titleFont:(CGFloat)fontSize withObject:(NSObject *)obj action:(SEL)action {
     
     if (!title) {
         title = @"";

@@ -10,7 +10,7 @@
 
 @implementation UIButton (Attribute)
 
-+ (void)attributeWithBUtton:(UIButton *)button title:(NSString *)text titleColor:(NSString *)titleColorStr forState:(UIControlState)state attributes:(NSArray *)attributeStrs attributeColors:(NSArray *)colors{
++ (void)attributeWithBUtton:(UIButton *)button title:(NSString *)text titleColor:(NSString *)titleColorStr forState:(UIControlState)state attributes:(NSArray *)attributeStrs attributeColors:(NSArray *)colors {
     if (text) {
         NSMutableAttributedString * attDesc = [[NSMutableAttributedString alloc] initWithString:text];
         UIColor *titleColor = [UIColor colorWithHexString:titleColorStr];

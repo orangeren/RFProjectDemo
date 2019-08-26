@@ -1,6 +1,6 @@
 //
 //  WebViewManager.h
-//  RFProjectDemo
+//  AnhuiDaily
 //
 //  Created by 任 on 2019/7/31.
 //  Copyright © 2019 ZXKJ. All rights reserved.

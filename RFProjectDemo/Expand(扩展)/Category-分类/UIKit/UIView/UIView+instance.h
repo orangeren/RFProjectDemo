@@ -45,6 +45,8 @@
 /** 设置圆角view */
 + (UIView *)setupCircleViewWithColorStr:(NSString *)colorStr circleCorner:(CGFloat)corner;
 
+/** 点击事件 */
+- (void)addActionWithTarget:(id)target action:(SEL)selector;
 
 /** 详细属性 */
 @property (nonatomic, copy) NSDictionary *info_Dict;

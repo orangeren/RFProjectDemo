@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>OC项目模版</string>
+	<string>H5Test</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -27,8 +27,8 @@
 			<string>分享</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>tencent1107852088</string>
-				<string>wx06538016d8f93b91</string>
+				<string>wxf837c8a0a4fc66c4</string>
+				<string>tencent101563480</string>
 			</array>
 		</dict>
 	</array>

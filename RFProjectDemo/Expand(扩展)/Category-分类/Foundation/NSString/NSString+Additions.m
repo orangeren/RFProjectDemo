@@ -9,22 +9,38 @@
 #import "NSString+Additions.h"
 #import "NSString+Base64.h"
 #import "NSData+Base64.h"
+
 @implementation NSString (Additions)
 
 /** 计算字体size */
-- (CGSize)sizeWithFont:(UIFont *)font maxW:(CGFloat)maxW
-{
+- (CGSize)sizeWithFont:(UIFont *)font maxW:(CGFloat)maxW {
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     attrs[NSFontAttributeName] = font;
     CGSize maxSize = CGSizeMake(maxW, MAXFLOAT);
     return [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
 }
 
-+ (float)heightForString:(NSString*)valueStr andFont:(UIFont*)font  andWidth:(float)width
-{
-    //    计算文本的大小
-    CGSize sizeToFit = [valueStr boundingRectWithSize:CGSizeMake(width , MAXFLOAT) options:NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil].size;
-    return sizeToFit.height;
+/** 计算字符串宽高 */
+- (CGFloat)getStringWidth:(UIFont *)font height:(CGFloat)height {
+    NSDictionary *attribute = @{NSFontAttributeName: font};
+    CGSize textSize = [self boundingRectWithSize:CGSizeMake(MAXFLOAT, height)
+                                         options:NSStringDrawingTruncatesLastVisibleLine |
+                       NSStringDrawingUsesLineFragmentOrigin |
+                       NSStringDrawingUsesFontLeading
+                                      attributes:attribute
+                                         context:nil].size;
+    return textSize.width;
+}
+
+- (CGFloat)getStringHeight:(UIFont *)font width:(CGFloat)width {
+    NSDictionary *attribute = @{NSFontAttributeName: font};
+    CGSize textSize = [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT)
+                                         options:NSStringDrawingTruncatesLastVisibleLine |
+                       NSStringDrawingUsesLineFragmentOrigin |
+                       NSStringDrawingUsesFontLeading
+                                      attributes:attribute
+                                         context:nil].size;
+    return textSize.height;
 }
 
 - (CGSize)sizeWithConstrainedToWidth:(float)width fromFont:(UIFont *)font1 lineSpace:(float)lineSpace{
@@ -120,6 +136,15 @@
     resultStr = [resultStr stringByReplacingOccurrencesOfString:@"&" withString:@""];
     return resultStr;
 }
+
+/** 去除空格 */
+- (NSString *)removeSpaceAndNewline {
+    NSString *temp = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+    temp = [temp stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+    temp = [temp stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    return temp;
+}
+
 
 /**
  *  返回重复字符的location

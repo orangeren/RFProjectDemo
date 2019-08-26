@@ -9,16 +9,7 @@
 #import "UIView+Administer.h"
 
 @implementation UIView (Administer)
-///////////////////////////////////////////////////////////////////////////////////////////////////
-/**
- * 移除当前视图下的所有子视图
- */
-- (void)removeAllSubviews {
-    while (self.subviews.count) {
-        UIView* child = self.subviews.lastObject;
-        [child removeFromSuperview];
-    }
-}
+ 
 /**
  *  通过 CAShapeLayer 方式绘制虚线
  *
@@ -69,27 +60,5 @@
     //  把绘制好的虚线添加上来
     [self.layer addSublayer:shapeLayer];
 }
-//  设置边框虚线
--(CAShapeLayer*)setupViewDotWdith:(CGFloat)width dotColor:(UIColor *)color fullLineWidth:(CGFloat)fullWidth blankWidth:(CGFloat)blankWidth
-{
-    CAShapeLayer *border = [CAShapeLayer layer];
-    border.strokeColor = color.CGColor;
-    border.fillColor = nil;
-    border.path = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
-    border.frame = self.bounds;
-    border.cornerRadius = 5;
-    border.lineWidth = width;
-    border.lineCap = @"square";
-    if (fullWidth < 1.0) {
-        fullWidth = 1.0;
-    }
-    if (blankWidth < 2.0) {
-        blankWidth = 2.0;
-    }
-    NSNumber *fullwidthNum = [NSNumber numberWithFloat:fullWidth];
-    NSNumber *blankwidthNum = [NSNumber numberWithFloat:blankWidth];
-    border.lineDashPattern = @[fullwidthNum, blankwidthNum];
-    [self.layer addSublayer:border];
-    return border;
-}
+
 @end

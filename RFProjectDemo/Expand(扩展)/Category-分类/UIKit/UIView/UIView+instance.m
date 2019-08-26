@@ -127,6 +127,14 @@ static const void *InfoObjectKey = &InfoObjectKey;
     return border;
 }
 
+
+/** 点击事件 */
+- (void)addActionWithTarget:(id)target action:(SEL)selector {
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:target action:selector];
+    [self addGestureRecognizer:tapGesture];
+}
+
+
 #pragma mark 详细属性设置
 - (void)setInfo_Dict:(NSDictionary *)info_Dict {
     objc_setAssociatedObject(self, IndieBandNameKey, info_Dict, OBJC_ASSOCIATION_RETAIN_NONATOMIC);

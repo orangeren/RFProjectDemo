@@ -10,15 +10,15 @@
 #define ThirdMacros_h
 
 
-#define kUmengKey           @"5b98f2eff29d982097000207"
+#define kUmengKey           @"5c9d82aa61f564330700001d"
 #define kUMengChannelId     @"AppStore"
 
 
-#define WeChat_AppKey       @"wx06538016d8f93b91"
-#define WeChat_AppSecret    @"defc9c9fe0055a06989bd8afba61c0e5"
+#define WeChat_AppKey       @"wxf837c8a0a4fc66c4"
+#define WeChat_AppSecret    @"e48813ada05f88df8b232d83d19ef755"
 
 
-#define QQ_AppKey           @"1107852088"
+#define QQ_AppKey           @"101563480"
 #define QQ_AppSecret        @"aOGUc7etc09YSXtO"
 
 

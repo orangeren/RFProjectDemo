@@ -1,6 +1,6 @@
 //
 //  WebBaseViewController.m
-//  RFProjectDemo
+//  AnhuiDaily
 //
 //  Created by 任 on 2019/7/31.
 //  Copyright © 2019 ZXKJ. All rights reserved.
@@ -149,7 +149,8 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
         UIButton *returnBack = [UIButton buttonWithType:UIButtonTypeCustom];
         returnBack.frame = CGRectMake(15, 0, 38, 44);
         [returnBack setImage:[UIImage imageNamed:@"Navi_back"] forState:UIControlStateNormal];
-        returnBack.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+        //returnBack.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+        returnBack.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [returnBack addTarget:self action:@selector(backNative)forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem *returnBackItem = [[UIBarButtonItem alloc] initWithCustomView:returnBack];
        
@@ -282,29 +283,35 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
         // 下载第三方APP
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:requestString]];
         decisionHandler(WKNavigationActionPolicyCancel);
-    } else if ([requestString rangeOfString:@"itunes.apple.com"].location != NSNotFound) {
+    }
+    else if ([requestString rangeOfString:@"itunes.apple.com"].location != NSNotFound) {
         // 跳转到AppStore，下载App
         NSString *appUrlStr = [requestString encodingStringUsingURLEscape];
         NSString *appUrl = [appUrlStr substringFromIndex:[appUrlStr rangeOfString:@"://"].location];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps%@", appUrl]]];
         decisionHandler(WKNavigationActionPolicyCancel);
-    } else if ([self tellPhoneInterupt:requestString]) {
+    }
+    else if ([self tellPhoneInterupt:requestString]) {
         // 电话拦截
         decisionHandler(WKNavigationActionPolicyCancel);
-    } else if ([self openNativeUrl:requestUrl]) {
+    }
+    else if ([self openNativeUrl:requestUrl]) {
         // 拦截原生操作
         decisionHandler(WKNavigationActionPolicyCancel);
-    } else if ([requestString rangeOfString:@"about:blank"].location != NSNotFound) {
+    }
+    else if ([requestString rangeOfString:@"about:blank"].location != NSNotFound) {
         // 空页面 不跳转
         NSLog(@"空页面========");
         decisionHandler(WKNavigationActionPolicyCancel);
-    } else if ([requestString rangeOfString:@"openNewWebPage"].location != NSNotFound) {
+    }
+    else if ([requestString rangeOfString:@"openNewWebPage"].location != NSNotFound) {
         // 打开一个新的web页面
         NSLog(@"新的web页面========");
         WebBaseViewController *webPage = [[WebBaseViewController alloc] initWithUrl:requestString];
         [self.navigationController pushViewController:webPage animated:YES];
         decisionHandler(WKNavigationActionPolicyCancel);
-    } else if ([requestString rangeOfString:@"weixin://"].location != NSNotFound || [requestString rangeOfString:@"mqq://"].location != NSNotFound) {
+    }
+    else if ([requestString rangeOfString:@"weixin://"].location != NSNotFound || [requestString rangeOfString:@"mqq://"].location != NSNotFound) {
         // 打开QQ，微信
         NSURL *url = [NSURL URLWithString:requestString];
         if ([[UIApplication sharedApplication] canOpenURL:url]) {
@@ -313,7 +320,35 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
             [self.view makeCenterToast:@"未安装相关软件"];
         }
         decisionHandler(WKNavigationActionPolicyCancel);
-    } else {
+    }
+    /** 给链接添加参数 */
+    else if ([requestString rangeOfString:@"_appInfo="].location == NSNotFound) {
+        NSArray *getUrls = [requestString componentsSeparatedByString:@"?"];
+        if ([[getUrls firstObject] rangeOfString:BaseUrl].location != NSNotFound) {
+            NSArray *urls = [requestString componentsSeparatedByString:@"_appInfo"];
+            if (urls.count == 2) {
+                decisionHandler(WKNavigationActionPolicyAllow);
+            } else {
+                NSDictionary *addDict = @{
+                                          
+                                          } ;
+                
+                NSURL *reqURL = [NSURL URLWithString:[urls firstObject]];
+                NSString *urlString = [[NSString stringWithFormat:@"%@%@_appInfo=%@", reqURL.absoluteString, ([reqURL.absoluteString rangeOfString:@"?"].location ==NSNotFound)?@"?":@"&", [addDict JSONString]] stringByReplacingOccurrencesOfString:@" " withString:@""];
+                NSString *filterStrUrl = [urlString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+                NSString *newUrlStr = [filterStrUrl encodingStringUsingURLEscape];
+                
+                NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString:newUrlStr]];
+                [self.webView loadRequest:request];
+                
+                NSLog(@"2 WebView Url: %@", request);
+                decisionHandler(WKNavigationActionPolicyCancel);
+            }
+        } else {
+            decisionHandler(WKNavigationActionPolicyAllow);
+        }
+    }
+    else {
         decisionHandler(WKNavigationActionPolicyAllow);
     }
 }
@@ -341,7 +376,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
         NSString *message = @"拨打电话";
         NSArray *arr = @[telStr, @"取消"];
        
-        [AlertSheetTools sheetTitle:message message:nil arrTitleAction:arr superVC:self blockClick:^(NSInteger index) {
+        [AlertSheetTools sheetTitle:message message:nil arrTitleAction:arr cancelTitle:@"取消" blockClick:^(NSInteger index) {
             if (0 == index) {
                 dispatch_after(0.3, dispatch_get_main_queue(), ^{
                     UIApplication *app = [UIApplication sharedApplication];

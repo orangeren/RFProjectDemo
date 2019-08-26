@@ -54,4 +54,5 @@
  *  @return 转成UTF8 字符串
  */
 - (NSString *)UTF8String;
+
 @end

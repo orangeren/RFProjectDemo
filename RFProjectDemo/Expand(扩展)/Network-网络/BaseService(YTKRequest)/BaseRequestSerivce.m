@@ -21,7 +21,8 @@
             dataDict = nil;
         }
         //网络请求
-        if (DEBUG && isAppOnline == 0) {
+        //if (DEBUG && isAppOnline == 0) {
+        if (isAppOnline == 0) {
             NSLog(@">>网络请求=======================================\nURL: %@\nArgument: %@\nResponseDict: %@", request.response.URL, [self requestArgument], dataDict);
         }
         
@@ -40,7 +41,8 @@
             [[UIApplication sharedApplication].keyWindow makeCenterToast:kNetworkConnectFailure];
         }
         //网络请求
-        if (DEBUG && isAppOnline == 0) {
+        //if (DEBUG && isAppOnline == 0) {
+        if (isAppOnline == 0) {
             NSLog(@">>网络请求=======================================\nURL: %@\nArgument: %@\nError: %@", request.response.URL, [self requestArgument], request.error);
         }
         

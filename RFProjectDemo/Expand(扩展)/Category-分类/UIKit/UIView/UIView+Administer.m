@@ -15,10 +15,12 @@
  */
 - (void)removeAllSubviews {
     while (self.subviews.count) {
-        UIView* child = self.subviews.lastObject;
+        UIView *child = self.subviews.lastObject;
         [child removeFromSuperview];
     }
 }
+
+
 /**
  *  通过 CAShapeLayer 方式绘制虚线
  *

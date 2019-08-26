@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIButton (Attribute)
-
+/** 按钮文字设置富文本 */
 + (void)attributeWithBUtton:(UIButton *)button title:(NSString *)text titleColor:(NSString *)titleColorStr forState:(UIControlState)state attributes:(NSArray *)attributeStrs attributeColors:(NSArray *)colors;
 
 @end

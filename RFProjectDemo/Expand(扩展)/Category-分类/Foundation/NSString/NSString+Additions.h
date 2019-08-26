@@ -13,8 +13,10 @@
 
 /** 计算字体size */
 - (CGSize)sizeWithFont:(UIFont *)font maxW:(CGFloat)maxW;
-+ (float)heightForString:(NSString*)valueStr andFont:(UIFont*)font  andWidth:(float)width;
 
+/** 计算字符串宽高 */
+- (CGFloat)getStringWidth:(UIFont *)font height:(CGFloat)height;
+- (CGFloat)getStringHeight:(UIFont *)font width:(CGFloat)width;
 
 //计算大小带间距
 - (CGSize)sizeWithConstrainedToWidth:(float)width fromFont:(UIFont *)font1 lineSpace:(float)lineSpace;
@@ -26,6 +28,11 @@
 - (void)drawInContext:(CGContextRef)context withPosition:(CGPoint)p andFont:(UIFont *)font andTextColor:(UIColor *)color andHeight:(float)height;
 /** 过滤 : & , */
 + (NSString *)filterSymbol:(NSString *)filterStr;
+
+/** 去除空格 */
+- (NSString *)removeSpaceAndNewline;
+
+
 /**
  *  返回重复字符的location
  *
